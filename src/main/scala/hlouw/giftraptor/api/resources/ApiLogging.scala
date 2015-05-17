@@ -3,11 +3,10 @@ package hlouw.giftraptor.api.resources
 import akka.actor.ActorRefFactory
 import spray.http.HttpRequest
 import spray.routing.directives.LoggingMagnet
+import spray.routing.directives.DebuggingDirectives._
 import spray.util.LoggingContext
 
 trait ApiLogging {
-
-  import spray.routing.directives.DebuggingDirectives._
 
   implicit def actorRefFactory: ActorRefFactory
 
