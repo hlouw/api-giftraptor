@@ -3,12 +3,12 @@ package hlouw.giftraptor.api.resources
 import kamon.spray.KamonTraceDirectives._
 import spray.routing.HttpService
 
-trait Users extends HttpService with ApiLogging {
+trait Users extends HttpService {
 
   val usersRoute = path("users") {
     get {
       traceName("getUsers") {
-        logRequestContext(complete("Here you go"))
+        complete("Here you go")
       }
     }
   }
