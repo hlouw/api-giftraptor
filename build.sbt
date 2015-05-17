@@ -10,6 +10,7 @@ libraryDependencies ++= {
   val akkaV = "2.3.9"
   val sprayV = "1.3.3"
   val kamonV = "0.4.0"
+  val specs2V = "2.3.11"
   Seq(
     "io.spray"            %%  "spray-can"     % sprayV,
     "io.spray"            %%  "spray-routing" % sprayV,
@@ -18,7 +19,8 @@ libraryDependencies ++= {
     "com.typesafe.akka"   %%  "akka-testkit"  % akkaV   % "test",
     "com.typesafe.akka"   %%  "akka-slf4j"    % akkaV,
     "ch.qos.logback"      %   "logback-classic" % "1.0.13",
-    "org.specs2"          %%  "specs2-core"   % "2.3.11" % "test",
+    "org.specs2"          %%  "specs2-core"   % specs2V % "test",
+    "org.specs2"          %%  "specs2-mock"   % specs2V % "test",
     "io.kamon"            %%  "kamon-core"    % kamonV,
     "io.kamon"            %%  "kamon-spray"   % kamonV,
     "org.logback-extensions" % "logback-ext-loggly" % "0.1.2"
