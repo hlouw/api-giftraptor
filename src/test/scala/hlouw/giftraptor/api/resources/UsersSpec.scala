@@ -1,11 +1,12 @@
 package hlouw.giftraptor.api.resources
 
+import akka.actor.ActorSystem
 import org.specs2.mutable.Specification
 import spray.testkit.Specs2RouteTest
 
 class UsersSpec extends Specification with Specs2RouteTest with Users {
 
-  def actorRefFactory = system
+  def actorRefFactory: ActorSystem = system
 
   "GET Users" should {
 
