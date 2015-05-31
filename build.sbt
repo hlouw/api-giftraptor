@@ -23,7 +23,9 @@ libraryDependencies ++= {
     "org.specs2"          %%  "specs2-mock"   % specs2V % "test",
     "io.kamon"            %%  "kamon-core"    % kamonV,
     "io.kamon"            %%  "kamon-spray"   % kamonV,
-    "org.logback-extensions" % "logback-ext-loggly" % "0.1.2"
+    "io.kamon"            %%  "kamon-datadog"   % kamonV,
+//    "org.logback-extensions" % "logback-ext-loggly" % "0.1.2",
+    "org.aspectj"         %   "aspectjweaver" % "1.8.2"
   )
 }
 
@@ -36,3 +38,13 @@ javaOptions in run <++= AspectjKeys.weaverOptions in Aspectj
 javaOptions in Revolver.reStart <++= AspectjKeys.weaverOptions in Aspectj
 
 fork in run := true
+
+enablePlugins(JavaServerAppPackaging)
+
+enablePlugins(DockerPlugin)
+
+dockerRepository := Some("hlouw")
+
+dockerExposedPorts := Seq(8080, 8081)
+
+bashScriptExtraDefines += """addJava "-javaagent:${lib_dir}/org.aspectj.aspectjweaver-1.8.2.jar""""
