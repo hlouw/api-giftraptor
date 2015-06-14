@@ -4,7 +4,7 @@ import akka.actor.ActorSystem
 import org.specs2.mutable.Specification
 import spray.testkit.Specs2RouteTest
 
-class UsersSpec extends Specification with Specs2RouteTest with Users {
+class UsersSpec extends Specification with Specs2RouteTest with UsersResource {
 
   def actorRefFactory: ActorSystem = system
 
