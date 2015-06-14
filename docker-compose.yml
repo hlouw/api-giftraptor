@@ -1,0 +1,16 @@
+api:
+  image: hlouw/api-giftraptor:0.1
+  links:
+    - ddagent:dd-agent
+  ports:
+    - "8080:8080"
+    - "8081:8081"
+
+ddagent:
+  image: datadog/docker-dd-agent
+  volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
+    - /proc/mounts:/host/proc/mounts:ro 
+    - /sys/fs/cgroup/:/host/sys/fs/cgroup:ro
+  environment:
+    - API_KEY
