@@ -15,6 +15,13 @@ class UsersSpec extends Specification with Specs2RouteTest with Users {
         responseAs[String] === "Here you go"
       }
     }
+
+    "return a response for specific user ID" in {
+      Get("/users/1234") ~> usersRoute ~> check {
+        responseAs[String] === "Got user 1234"
+      }
+    }
+
   }
 
 }
