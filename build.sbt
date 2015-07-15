@@ -6,6 +6,8 @@ scalaVersion  := "2.11.6"
 
 scalacOptions := Seq("-unchecked", "-deprecation", "-encoding", "utf8")
 
+resolvers += "Typesafe repository" at "http://repo.typesafe.com/typesafe/releases/"
+
 libraryDependencies ++= {
   val akkaV = "2.3.9"
   val sprayV = "1.3.3"
@@ -25,7 +27,8 @@ libraryDependencies ++= {
     "io.kamon"            %%  "kamon-spray"   % kamonV,
     "io.kamon"            %%  "kamon-datadog"   % kamonV,
 //    "org.logback-extensions" % "logback-ext-loggly" % "0.1.2",
-    "org.aspectj"         %   "aspectjweaver" % "1.8.2"
+    "org.aspectj"         %   "aspectjweaver" % "1.8.2",
+    "org.reactivemongo"   %%  "reactivemongo" % "0.10.5.0.akka23"
   )
 }
 
