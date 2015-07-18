@@ -5,8 +5,7 @@ import hlouw.giftraptor.api.support.MongoDbSupport
 
 class UsersService(mongoDbSupport: MongoDbSupport) {
 
-  def persistUser(user: User) = {
-    val usersCol = mongoDbSupport.collection("users")
-    usersCol.find
+  def persistUser(user: User): Unit = {
+    val users = mongoDbSupport.collection("users")
   }
 }

@@ -28,7 +28,7 @@ libraryDependencies ++= {
     "io.kamon"            %%  "kamon-datadog"   % kamonV,
 //    "org.logback-extensions" % "logback-ext-loggly" % "0.1.2",
     "org.aspectj"         %   "aspectjweaver" % "1.8.2",
-    "org.reactivemongo"   %%  "reactivemongo" % "0.10.5.0.akka23"
+    "org.reactivemongo"   %%  "reactivemongo" % "0.11.2"
   )
 }
 

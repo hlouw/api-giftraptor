@@ -1,8 +1,9 @@
 package hlouw.giftraptor.api.support
 
-import reactivemongo.api.Collection
+import reactivemongo.api.collections.bson.BSONCollection
+
 
 trait MongoDbSupport {
 
-  def collection(name: String): Collection
+  def collection(name: String): BSONCollection
 }
